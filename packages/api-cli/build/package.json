@@ -1,0 +1,56 @@
+{
+  "name": "@axia-js/api-cli",
+  "version": "0.1.0",
+  "description": "A commandline API interface for interacting with a chain",
+  "main": "index.cjs",
+  "sideEffects": false,
+  "bin": {
+    "axia-js-api": "./index.cjs"
+  },
+  "author": "Sankar boro <sankar.boro@zeeve.io>",
+  "maintainers": [],
+  "contributors": [],
+  "license": "Apache-2.0",
+  "repository": "github:axia-js/tools",
+  "bugs": "https://github.com/axia-js/tools/issues",
+  "homepage": "https://github.com/axia-js/tools/tree/master/packages/api-cli#readme",
+  "dependencies": {
+    "@axia-js/api": "0.1.0",
+    "@axia-js/keyring": "0.1.2",
+    "@axia-js/types": "0.1.0",
+    "@axia-js/util": "0.1.0",
+    "@babel/core": "^7.15.5",
+    "@babel/register": "^7.15.3",
+    "@babel/runtime": "^7.15.4",
+    "yargs": "^17.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^16.9.1",
+    "@types/yargs": "^17.0.2"
+  },
+  "exports": {
+    ".": {
+      "require": "./index.cjs",
+      "default": "./index.js"
+    },
+    "./api": {
+      "require": "./api.cjs",
+      "default": "./api.js"
+    },
+    "./cli": {
+      "require": "./cli.cjs",
+      "default": "./cli.js"
+    },
+    "./package.json": "./package.json",
+    "./packageInfo": {
+      "require": "./packageInfo.cjs",
+      "default": "./packageInfo.js"
+    },
+    "./README.md": "./README.md",
+    "./types": {
+      "require": "./types.cjs",
+      "default": "./types.js"
+    }
+  },
+  "type": "module"
+}

@@ -1,0 +1,75 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = calculate;
+// Copyright 2017-2021 @axia-js/vanitygen authors & contributors
+// SPDX-License-Identifier: Apache-2.0
+const MAX_OFFSET = 5;
+
+function calculateAtOne(atOffset, test, address) {
+  return {
+    count: test.reduce((count, c, index) => {
+      if (index === count) {
+        count += c === '?' || c === address.charAt(index + atOffset) ? 1 : 0;
+      }
+
+      return count;
+    }, 0),
+    offset: atOffset
+  };
+}
+
+function calculateAt(atOffset, test, address) {
+  let bestCount = 0;
+  let bestOffset = 1;
+
+  for (let i = 0; i < test.length; i++) {
+    const {
+      count,
+      offset
+    } = calculateAtOne(atOffset, test[i], address);
+
+    if (count > bestCount) {
+      bestCount = count;
+      bestOffset = offset;
+    }
+  }
+
+  return {
+    count: bestCount,
+    offset: bestOffset
+  };
+}
+
+function calculate(test, _address, {
+  atOffset = -1,
+  withCase = false
+}) {
+  const address = withCase ? _address : _address.toLowerCase();
+
+  if (atOffset > 0) {
+    return calculateAt(atOffset, test, address);
+  }
+
+  let bestCount = 0;
+  let bestOffset = 1;
+
+  for (let index = 0; index < MAX_OFFSET; index++) {
+    const {
+      count,
+      offset
+    } = calculateAt(index, test, address);
+
+    if (count > bestCount) {
+      bestCount = count;
+      bestOffset = offset;
+    }
+  }
+
+  return {
+    count: bestCount,
+    offset: bestOffset
+  };
+}

@@ -1,0 +1,43 @@
+{
+  "repository": "https://github.com/axia-js/tools",
+  "author": "Sankar boro <sankar.boro@zeeve.io>",
+  "license": "Apache-2",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "resolutions": {
+    "@axia-js/api": "0.1.0",
+    "@axia-js/api-derive": "0.1.0",
+    "@axia-js/keyring": "0.1.2",
+    "@axia-js/types": "0.1.0",
+    "@axia-js/util": "0.1.0",
+    "@axia-js/util-crypto": "0.1.2",
+    "typescript": "^4.4.3"
+  },
+  "scripts": {
+    "build": "axia-dev-build-ts",
+    "build:release": "axia-ci-ghact-build",
+    "lint": "axia-dev-run-lint",
+    "clean": "axia-dev-clean-build",
+    "postinstall": "axia-dev-yarn-only",
+    "run:api": "./packages/api-cli/src/index.cjs",
+    "run:json": "./packages/json-serve/src/index.cjs",
+    "run:metadata": "./packages/metadata-cmp/src/index.cjs",
+    "run:monitor": "./packages/monitor-rpc/src/index.cjs",
+    "run:signer": "./packages/signer-cli/src/index.cjs",
+    "run:vanity": "./packages/vanitygen/src/index.cjs",
+    "test": "echo \"no tests\""
+  },
+  "devDependencies": {
+    "@axia-js/dev": "0.1.0",
+    "@axia-js/ts": "0.1.0",
+    "@babel/core": "^7.15.5",
+    "@babel/register": "^7.15.3",
+    "@babel/runtime": "^7.15.4",
+    "@types/node": "^16.9.1",
+    "@types/yargs": "^17.0.2"
+  },
+  "version": "0.1.0",
+  "packageManager": "yarn@3.0.1"
+}

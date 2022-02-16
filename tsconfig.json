@@ -1,0 +1,23 @@
+{
+  "extends": "@axia-js/dev/config/tsconfig.json",
+  "exclude": [
+    "build/**/*",
+    "**/build/**/*"
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@axia-js/api-cli": [ "packages/api-cli/src" ],
+      "@axia-js/api-cli/*": [ "packages/api-cli/src/*" ],
+      "@axia-js/json-serve": [ "packages/json-serve/src" ],
+      "@axia-js/json-serve/*": [ "packages/json-serve/src/*" ],
+      "@axia-js/metadata-cmp": [ "packages/metadata-cmp/src" ],
+      "@axia-js/metadata-cmp/*": [ "packages/metadata-cmp/src/*" ],
+      "@axia-js/monitor-rpc": [ "packages/monitor-rpc/src" ],
+      "@axia-js/monitor-rpc/*": [ "packages/monitor-rpc/src/*" ],
+      "@axia-js/signer-cli": [ "packages/signer-cli/src" ],
+      "@axia-js/signer-cli/*": [ "packages/signer-cli/src/*" ]
+    },
+    "skipLibCheck": true
+  }
+}

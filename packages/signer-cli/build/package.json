@@ -1,0 +1,66 @@
+{
+  "name": "@axia-js/signer-cli",
+  "version": "0.1.0",
+  "description": "A commandline signer for offline signature generataion",
+  "main": "index.cjs",
+  "sideEffects": false,
+  "bin": {
+    "axia-js-signer": "./index.cjs"
+  },
+  "author": "Sankar boro <sankar.boro@zeeve.io>",
+  "maintainers": [],
+  "contributors": [],
+  "license": "Apache-2.0",
+  "repository": "github:axia-js/tools",
+  "bugs": "https://github.com/axia-js/tools/issues",
+  "homepage": "https://github.com/axia-js/tools/tree/master/packages/signer-cli#readme",
+  "dependencies": {
+    "@axia-js/api": "0.1.0",
+    "@axia-js/api-cli": "0.1.0",
+    "@axia-js/keyring": "0.1.2",
+    "@axia-js/types": "0.1.0",
+    "@axia-js/util": "0.1.0",
+    "@axia-js/util-crypto": "0.1.2",
+    "@babel/core": "^7.15.5",
+    "@babel/register": "^7.15.3",
+    "@babel/runtime": "^7.15.4",
+    "yargs": "^17.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^16.9.1",
+    "@types/yargs": "^17.0.2"
+  },
+  "exports": {
+    ".": {
+      "require": "./index.cjs",
+      "default": "./index.js"
+    },
+    "./cmdSendOffline": {
+      "require": "./cmdSendOffline.cjs",
+      "default": "./cmdSendOffline.js"
+    },
+    "./cmdSign": {
+      "require": "./cmdSign.cjs",
+      "default": "./cmdSign.js"
+    },
+    "./cmdSubmit": {
+      "require": "./cmdSubmit.cjs",
+      "default": "./cmdSubmit.js"
+    },
+    "./package.json": "./package.json",
+    "./packageInfo": {
+      "require": "./packageInfo.cjs",
+      "default": "./packageInfo.js"
+    },
+    "./RawSigner": {
+      "require": "./RawSigner.cjs",
+      "default": "./RawSigner.js"
+    },
+    "./README.md": "./README.md",
+    "./signer": {
+      "require": "./signer.cjs",
+      "default": "./signer.js"
+    }
+  },
+  "type": "module"
+}
